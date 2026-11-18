@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>丁亮 · 后期制作作品集</title>
+  <meta name="description" content="丁亮个人作品集：三维设计、产品海报、电商详情页、视频剪辑包装、MG动画、C4D动画、AIGC作品">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --bg-elevated: #12141a;
+      --surface: #1a1d26;
+      --text: #f0f1f5;
+      --text-muted: #8b92a8;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.35);
+      --radius: 14px;
+      --max-width: 1320px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(11, 12, 15, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: background 0.3s ease;
+    }
+
+    nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.12), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1), transparent 40%),
+        var(--bg);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 8vw, 5.6rem);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px var(--accent-glow);
+    }
+
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 24px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 42px;
+    }
+
+    /* Filter */
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .filter-btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 6px 18px var(--accent-glow);
+    }
+
+    /* Works Grid */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    @media (max-width: 480px) {
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .work-card {
+      position: relative;
+      background: var(--bg-elevated);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .work-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .work-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .work-card:hover .work-overlay {
+      opacity: 1;
+    }
+
+    .work-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .work-media img,
+    .work-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      -webkit-touch-callout: none; /* 禁止 iOS 长按弹出存储面板 */
+      user-select: none;
+      -webkit-user-select: none;
+      pointer-events: none;
+    }
+
+    /* 保护模式下点击事件由卡片层接管，媒体层不接收任何交互 */
+
+    .lb-media-wrap img,
+    .lb-media-wrap video {
+      -webkit-touch-callout: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .work-card:hover .work-media img,
+    .work-card:hover .work-media video {
+      transform: scale(1.05);
+    }
+
+    .work-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .work-category {
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .work-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 1.3rem;
+      pointer-events: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      z-index: 3;
+    }
+
+    /* ===== 作品保护 ===== */
+    .watermark {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='140'%3E%3Ctext x='6' y='76' font-size='16' fill='%23ffffff' fill-opacity='0.15' font-family='sans-serif' letter-spacing='2' transform='rotate(-22 6 76)'%3E%E4%B8%81%E4%BA%AE%20%C2%B7%20PORTFOLIO%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+    }
+
+    .lb-media-wrap {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    .lb-media-wrap .watermark {
+      border-radius: 12px;
+    }
+
+    .protection-toast {
+      position: fixed;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%) translateY(16px);
+      background: rgba(18, 18, 20, 0.94);
+      color: var(--accent);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      padding: 10px 24px;
+      border-radius: 26px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      z-index: 300;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .protection-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .about-card {
+      background: var(--bg-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .about-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .about-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .timeline-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .contact-card {
+      background: var(--bg-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .contact-value {
+      font-size: 1.15rem;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.94);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 92vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .lightbox-content img,
+    .lightbox-content video {
+      max-width: 100%;
+      max-height: 90vh;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .lb-loading {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .lb-spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      border-top-color: var(--accent, #d4af37);
+      border-radius: 50%;
+      animation: lb-spin 0.9s linear infinite;
+    }
+
+    @keyframes lb-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      font-size: 2.2rem;
+      color: #fff;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Mobile nav */
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">丁亮 <span>PORTFOLIO</span></div>
+      <ul class="nav-links">
+        <li><a href="#works">作品</a></li>
+        <li><a href="#about">关于</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">后期制作 · 三维动态视觉</div>
+    <h1>丁亮 <span>后期制作作品集</span></h1>
+    <p class="hero-subtitle">
+      擅长 AE / C4D / PR / PS / 达芬奇，专注三维产品渲染、短视频剪辑包装、MG 动画与电商视觉设计。
+    </p>
+    <div class="hero-actions">
+      <a href="#works" class="btn btn-primary">浏览作品</a>
+      <a href="assets/个人简历.pdf" class="btn btn-ghost" download>下载简历 PDF</a>
+    </div>
+    <div class="scroll-hint">
+      <span>向下滚动</span>
+      <span>↓</span>
+    </div>
+  </section>
+
+  <section id="works">
+    <h2 class="section-title">精选作品</h2>
+    <p class="section-desc">按分类筛选，点击图片或视频可放大预览。</p>
+    <div class="filter-bar" id="filterBar"></div>
+    <div class="works-grid" id="worksGrid"></div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">关于我</h2>
+    <p class="section-desc">从影视后期到三维动态设计，持续探索视觉表达的边界。</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>自我评价</h3>
+        <p>
+          擅长理性梳理项目流程、规范管理工程与素材。长期深耕影视后期与三维动态设计，线下系统学习 AE、C4D 建模、灯光动画、OC 渲染，结合 PR/AE 完成剪辑、特效合成、视频包装。
+        </p>
+        <p>
+          具备不错的画面审美，擅长把控视频节奏、光影质感。跨专业求职，学习驱动力强，抗压能力良好，能够快速接收需求、高效落地成片。
+        </p>
+        <div class="skill-tags">
+          <span class="skill-tag">After Effects</span>
+          <span class="skill-tag">Cinema 4D</span>
+          <span class="skill-tag">Premiere Pro</span>
+          <span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">DaVinci Resolve</span>
+          <span class="skill-tag">OC 渲染</span>
+          <span class="skill-tag">三维产品渲染</span>
+          <span class="skill-tag">短视频剪辑</span>
+        </div>
+      </div>
+      <div class="about-card">
+        <h3>工作经历</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2024.12 - 2026.05</div>
+            <div class="timeline-title">湖南湘擎电子商务有限公司 · 后期制作</div>
+            <div class="timeline-desc">
+              3 个月内独立完成 120 条定向投放短视频的全流程后期制作，累计撬动平台总消耗超 300 万+；3 秒完播留存率从 52% 提升至 67%，素材平均 ROI 从 1:3.1 提升至 1:4.5；搭建素材分类管理体系，沉淀 15 套通用剪辑模板，团队整体产能提升 40%。
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">创鑫电商 · 电商运营</div>
+            <div class="timeline-title">电商运营</div>
+            <div class="timeline-desc">
+              负责店铺基础维护、订单处理、售后与差评维护、每日数据统计、大促活动申报，协同客服优化商品文案，安排产品拍摄并对接剪辑制作种草素材。
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2022 - 2024</div>
+            <div class="timeline-title">国家开放大学 · 大数据技术专业</div>
+            <div class="timeline-desc">
+              主修 Python 数据分析、统计学基础、数据库原理、数据仓库、数据可视化、数据挖掘基础、大数据采集与预处理。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">联系我</h2>
+    <p class="section-desc">欢迎项目合作与职位机会，随时联系。</p>
+    <div class="contact-grid">
+      <a class="contact-card" href="tel:18179018884">
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">18179018884</div>
+      </a>
+      <a class="contact-card" href="mailto:2281935365@qq.com">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">2281935365@qq.com</div>
+      </a>
+      <a class="contact-card" href="assets/个人简历.pdf" download>
+        <div class="contact-label">Resume</div>
+        <div class="contact-value">下载个人简历 PDF →</div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 丁亮 · 后期制作作品集 · All Rights Reserved
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
+
+  <script>
+    const categories = [
+      { id: 'all', label: '全部' },
+      { id: '3d', label: '三维设计' },
+      { id: 'poster', label: '产品海报' },
+      { id: 'ecommerce', label: '电商详情页' },
+      { id: 'video', label: '视频动画' },
+      { id: 'edit', label: '剪辑包装' },
+      { id: 'mg', label: 'MG 动画' },
+      { id: 'c4d', label: 'C4D 动画' },
+      { id: 'aigc', label: 'AIGC 作品' },
+      { id: 'ai-image', label: 'AI 生成图' }
+    ];
+
+    const works = [
+      { category: '3d', type: 'image', src: 'assets/01三维设计/冰火两重天0003.jpg', title: '冰火两重天' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/小绿瓶0010.jpg', title: '小绿瓶' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/手机壳.jpg', title: '手机壳渲染' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/扫地机器人_DeMain_0000.jpg', title: '扫地机器人' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/玫瑰花美妆套装.jpg', title: '玫瑰花美妆套装' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/美妆小瓶.jpg', title: '美妆小瓶' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/耳机_Main_0031.jpg', title: '耳机渲染 03' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/耳机-1_Main_0019.jpg', title: '耳机渲染 01' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/耳机-2_Main_0019.jpg', title: '耳机渲染 02' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/谷雨.jpg', title: '谷雨' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/键盘特写-1.jpg', title: '键盘特写 01' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/键盘特写-2.jpg', title: '键盘特写 02' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/键盘特写-3.jpg', title: '键盘特写 03' },
+      { category: '3d', type: 'image', src: 'assets/01三维设计/键盘特写-4.jpg', title: '键盘特写 04' },
+
+      { category: 'poster', type: 'image', src: 'assets/02产品海报/效果图.jpg', title: '产品海报 01' },
+      { category: 'poster', type: 'image', src: 'assets/02产品海报/效果图 (1).jpg', title: '产品海报 02' },
+      { category: 'poster', type: 'image', src: 'assets/02产品海报/效果图 (2).jpg', title: '产品海报 03' },
+      { category: 'poster', type: 'image', src: 'assets/02产品海报/效果图 (4).jpg', title: '产品海报 04' },
+
+      { category: 'ecommerce', type: 'image', src: 'assets/03电商详情页/头戴式耳机详情图-1.jpg', title: '头戴式耳机详情页' },
+      { category: 'ecommerce', type: 'image', src: 'assets/03电商详情页/头戴耳机详情图.jpg', title: '头戴耳机详情页' },
+      { category: 'ecommerce', type: 'image', src: 'assets/03电商详情页/键盘详情图-1.jpg', title: '键盘详情页 01' },
+      { category: 'ecommerce', type: 'image', src: 'assets/03电商详情页/键盘详情图-2.jpg', title: '键盘详情页 02' },
+
+      { category: 'video', type: 'video', src: 'assets/04视频动画/效果.mp4', title: '视频动画' },
+      { category: 'edit', type: 'video', src: 'assets/05视频剪辑包装/路特斯广告剪辑+AE包装.mp4', title: '路特斯广告剪辑 + AE 包装' },
+
+      { category: 'mg', type: 'video', src: 'assets/06MG动画/健康科普小知识.mp4', title: '健康科普小知识' },
+      { category: 'mg', type: 'video', src: 'assets/06MG动画/工厂车间.mp4', title: '工厂车间' },
+      { category: 'mg', type: 'video', src: 'assets/06MG动画/货物运输.mp4', title: '货物运输' },
+
+      { category: 'aigc', type: 'video', src: 'assets/AIGC-DJI Lito X1/视频.mp4', title: 'AIGC - DJI Lito X1' },
+
+      { category: 'ai-image', type: 'image', src: 'assets/AI生成产品图/AI生成.jpg', title: 'AI 生成产品图 01' },
+      { category: 'ai-image', type: 'image', src: 'assets/AI生成产品图/AI生成 (2).jpg', title: 'AI 生成产品图 02' },
+
+      { category: 'c4d', type: 'video', src: 'assets/C4D动画/C4D时空穿梭.mp4', title: 'C4D 时空穿梭' }
+    ];
+
+    const filterBar = document.getElementById('filterBar');
+    const worksGrid = document.getElementById('worksGrid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const lightboxClose = document.getElementById('lightboxClose');
+    let activeCategory = 'all';
+
+    function encodePath(path) {
+      return path.split('/').map(encodeURIComponent).join('/');
+    }
+
+    function renderFilters() {
+      filterBar.innerHTML = categories.map(cat => `
+        <button class="filter-btn ${cat.id === activeCategory ? 'active' : ''}" data-category="${cat.id}">${cat.label}</button>
+      `).join('');
+
+      filterBar.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeCategory = btn.dataset.category;
+          renderFilters();
+          renderWorks();
+        });
+      });
+    }
+
+    function renderWorks() {
+      const filtered = activeCategory === 'all'
+        ? works
+        : works.filter(w => w.category === activeCategory);
+
+      worksGrid.innerHTML = filtered.map((work, index) => {
+        const catLabel = categories.find(c => c.id === work.category)?.label || work.category;
+        const encodedSrc = encodePath(work.src);
+        const posterSrc = work.poster
+          ? encodePath(work.poster)
+          : encodePath(work.src.replace(/\.mp4$/i, '_poster.jpg'));
+        const media = work.type === 'video'
+          ? `<div class="work-media">
+               <img src="${posterSrc}" alt="${work.title}" loading="lazy">
+               <div class="play-icon">▶</div>
+               <div class="watermark"></div>
+               <div class="work-overlay">
+                 <div class="work-category">${catLabel}</div>
+                 <div class="work-title">${work.title}</div>
+               </div>
+             </div>`
+          : `<div class="work-media">
+               <img src="${encodedSrc}" alt="${work.title}" loading="lazy">
+               <div class="watermark"></div>
+               <div class="work-overlay">
+                 <div class="work-category">${catLabel}</div>
+                 <div class="work-title">${work.title}</div>
+               </div>
+             </div>`;
+        return `<article class="work-card" data-type="${work.type}" data-src="${encodedSrc}" data-title="${work.title}" style="animation-delay: ${index * 0.05}s">${media}</article>`;
+      }).join('');
+
+      document.querySelectorAll('.work-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const type = card.dataset.type;
+          const src = card.dataset.src;
+          const title = card.dataset.title;
+          openLightbox(type, src, title);
+        });
+      });
+    }
+
+    let currentVideoURL = null;
+
+    function openLightbox(type, src, title) {
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      if (type === 'video') {
+        // iOS Safari requires HTTP Range support for direct video streaming.
+        // The hosting gateway does not support Range, so fetch the whole file
+        // as a Blob and play from an object URL, which works on all devices.
+        lightboxContent.innerHTML = '<div class="lb-loading"><div class="lb-spinner"></div><span>视频加载中…</span></div>';
+        fetch(src)
+          .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.blob(); })
+          .then(blob => {
+            currentVideoURL = URL.createObjectURL(blob);
+            lightboxContent.innerHTML = `<div class="lb-media-wrap"><video src="${currentVideoURL}" controls autoplay playsinline controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture style="max-height:90vh"></video><div class="watermark"></div></div>`;
+          })
+          .catch(() => {
+            lightboxContent.innerHTML = '<div class="lb-loading"><span>视频加载失败，请检查网络后重试</span></div>';
+          });
+      } else {
+        lightboxContent.innerHTML = `<div class="lb-media-wrap"><img src="${src}" alt="${title}"><div class="watermark"></div></div>`;
+      }
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      if (currentVideoURL) {
+        URL.revokeObjectURL(currentVideoURL);
+        currentVideoURL = null;
+      }
+      lightboxContent.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    /* ===== 作品保护 ===== */
+    let protectionToastTimer = null;
+
+    function showProtectionToast(msg) {
+      let el = document.getElementById('protectionToast');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = 'protectionToast';
+        el.className = 'protection-toast';
+        document.body.appendChild(el);
+      }
+      el.textContent = msg;
+      requestAnimationFrame(() => el.classList.add('show'));
+      clearTimeout(protectionToastTimer);
+      protectionToastTimer = setTimeout(() => el.classList.remove('show'), 1800);
+    }
+
+    // 禁用作品区域右键菜单
+    document.addEventListener('contextmenu', (e) => {
+      if (e.target.closest && (e.target.closest('.work-media') || e.target.closest('.lb-media-wrap'))) {
+        e.preventDefault();
+        showProtectionToast('作品受保护，仅供浏览');
+      }
+    });
+
+    // 禁止拖拽图片/视频另存
+    document.addEventListener('dragstart', (e) => {
+      if (e.target && (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO')) {
+        e.preventDefault();
+      }
+    });
+
+    // 拦截另存网页 / 查看源码 / 打印快捷键
+    document.addEventListener('keydown', (e) => {
+      const k = (e.key || '').toLowerCase();
+      if ((e.ctrlKey || e.metaKey) && (k === 's' || k === 'u' || k === 'p')) {
+        e.preventDefault();
+        showProtectionToast('作品受保护，仅供浏览');
+      }
+    });
+
+    // 禁止在作品区域选中文本/图像（防止复制粘贴另存）
+    document.addEventListener('selectstart', (e) => {
+      if (e.target.closest && (e.target.closest('.work-media') || e.target.closest('.lb-media-wrap'))) {
+        e.preventDefault();
+      }
+    });
+
+    // 移动端长按保存拦截：按住超过 350ms 视为长按，阻止后续系统保存面板
+    let touchHoldTimer = null;
+    document.addEventListener('touchstart', (e) => {
+      const target = e.target.closest && (e.target.closest('.work-media') || e.target.closest('.lb-media-wrap img'));
+      if (!target) return;
+      touchHoldTimer = setTimeout(() => {
+        showProtectionToast('作品受保护，仅供浏览');
+      }, 350);
+    }, { passive: true });
+    document.addEventListener('touchend', () => clearTimeout(touchHoldTimer), { passive: true });
+    document.addEventListener('touchmove', () => clearTimeout(touchHoldTimer), { passive: true });
+    // iOS Safari 长按图片可能绕过 contextmenu，这里兜底拦截
+    document.addEventListener('contextmenu', (e) => {
+      if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+        e.preventDefault();
+      }
+    }, true);
+
+    renderFilters();
+    renderWorks();
+  </script>
+</body>
+</html>
